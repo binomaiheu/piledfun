@@ -31,9 +31,22 @@ miels_heelal = [
 	[0,0,0,0,0,0,0,0]
 ]
 
+pulsar = [
+	[0,0,0,0,0,0,0,0],
+	[0,0,0,0,0,1,0,0],
+	[0,0,0,0,0,1,0,0],
+	[0,0,0,0,0,1,1,0],
+	[0,0,0,0,0,0,0,0],
+	[0,1,1,1,0,0,1,1],
+	[0,0,0,1,0,1,0,1],
+	[0,0,0,0,0,1,1,0]
+]
+
+
 
 #start_universe = glider_gun
-start_universe = miels_heelal
+#start_universe = miels_heelal
+start_universe = pulsar
 
 def isAlive( c ):
 	return c == 1
