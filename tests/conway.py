@@ -9,16 +9,31 @@ from luma.core.render import canvas
 UNIVERSE_WIDTH = 8
 UNIVERSE_HEIGHT = 8
 
-start_universe = [
+glider_gun = [
+	[0,1,0,0,0,0,0,0],
+	[0,0,1,0,0,0,0,0],
+	[1,1,1,0,0,0,0,0],
 	[0,0,0,0,0,0,0,0],
-	[0,1,0,1,0,0,0,0],
-	[0,0,0,1,0,1,0,0],
-	[0,0,0,1,0,1,1,0],
 	[0,0,0,0,0,0,0,0],
-	[0,1,1,0,0,0,1,1],
-	[0,0,0,0,0,0,0,1],
-	[0,0,0,0,0,1,1,0]
+	[0,0,0,0,0,0,0,0],
+	[0,0,0,0,0,0,0,0],
+	[0,0,0,0,0,0,0,0]
 ]
+
+miels_heelal = [
+	[0,1,0,0,0,0,0,0],
+	[0,0,1,0,0,0,0,0],
+	[1,1,1,0,0,0,0,0],
+	[0,0,0,0,0,0,1,0],
+	[0,0,0,0,0,1,1,0],
+	[0,0,0,1,0,0,0,0],
+	[1,1,0,0,0,0,0,0],
+	[0,0,0,0,0,0,0,0]
+]
+
+
+#start_universe = glider_gun
+start_universe = miels_heelal
 
 def isAlive( c ):
 	return c == 1
@@ -98,10 +113,13 @@ if __name__ == '__main__':
 		#initial universe
 		universe = start_universe
 		
+		drawMatrix( dev, universe )
+		sleep(5)
+		
 		while 1:
 			drawMatrix( dev, universe )
 			showMatrix(universe)
-			sleep(1)
+			sleep(0.25)
 			universe = gameOfLife( universe )
 		
 	except KeyboardInterrupt:
